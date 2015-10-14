@@ -1,8 +1,19 @@
+<h2>2 simple lists, interconnected</h2>
+
 {{#ember-dragula config=model.dragulaoptions dragulaEvent='dragulaEvent' }}
-	{{#ember-dragula-container}}
-		{{#tree-component tagName="li" data='We ll move these items'}}
-			hallo
-		{{/tree-component}}
+	{{#ember-dragula-container tagName="ul"}}
+		<li>
+			We ll move these items
+		</li>
+		<li>
+			To test if everything is fine.
+		</li>
+		<li>
+			We ll move these items
+		</li>
+	{{/ember-dragula-container}}
+	<hr>
+	{{#ember-dragula-container tagName="ul"}}
 		<li>
 			We ll move these items
 		</li>
@@ -13,8 +24,24 @@
 			We ll move these items
 		</li>
 		<li>
-			<strong>Another Group</strong>
-			{{#ember-dragula-container tagName="ul" created='created' parent=model.parent}}
+			To test if everything is fine.
+		</li>
+	{{/ember-dragula-container}}
+{{/ember-dragula}}
+
+<h2>2 Nested lists</h2>
+
+{{#ember-dragula config=nestedOptions dragulaEvent='dragulaNestedEvent' }}
+	{{#ember-dragula-container tagName="ul"}}
+		<li>
+			We ll move these items
+		</li>
+		<li>
+			To test if everything is fine.
+		</li>
+		<li>
+			<strong>This is a group with a nested dragula</strong>
+			{{#ember-dragula-container tagName="ul"}}
 				<li>
 					We ll move these items
 				</li>

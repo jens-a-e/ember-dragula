@@ -18,8 +18,11 @@ export default Ember.Route.extend({
 		};
 	},
 	actions:{
-		'dragulaEvent':function(eventName, data){
+		dragulaEvent: function(eventName, data){
 			console.log(eventName, data);
+		},
+		dragulaNestedEvent: function(eventName, data){
+			console.log("nested", eventName, data);
 		}
 	}
 });
