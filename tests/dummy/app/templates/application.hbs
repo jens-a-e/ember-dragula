@@ -1,32 +1,33 @@
 {{#ember-dragula config=model.dragulaoptions dragulaEvent='dragulaEvent' }}
-	{{#ember-dragula-container }}
-		{{#tree-component data='We ll move these items'}}
+	{{#ember-dragula-container}}
+		{{#tree-component tagName="li" data='We ll move these items'}}
+			hallo
 		{{/tree-component}}
-		<div>
+		<li>
 			We ll move these items
-		</div>
-		<div>
+		</li>
+		<li>
 			To test if everything is fine.
-		</div>
-		<div>
+		</li>
+		<li>
 			We ll move these items
-		</div>
-		<div>
-			To test if everything is fine.
-		</div>
-	{{/ember-dragula-container}}
-	{{#ember-dragula-container created='created' parent=model.parent}}
-		<div>
-			We ll move these items
-		</div>
-		<div>
-			To test if everything is fine.
-		</div>
-		<div>
-			We ll move these items
-		</div>
-		<div>
-			To test if everything is fine.
-		</div>
+		</li>
+		<li>
+			<strong>Another Group</strong>
+			{{#ember-dragula-container tagName="ul" created='created' parent=model.parent}}
+				<li>
+					We ll move these items
+				</li>
+				<li>
+					To test if everything is fine.
+				</li>
+				<li>
+					We ll move these items
+				</li>
+				<li>
+					To test if everything is fine.
+				</li>
+			{{/ember-dragula-container}}
+		</li>
 	{{/ember-dragula-container}}
 {{/ember-dragula}}
